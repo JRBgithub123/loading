@@ -8,9 +8,9 @@ var load=new Vue({
     },
     methods:{
       //判断设备类型
-      browserRedirect() {
+      browserRedirect(){
         var sUserAgent = navigator.userAgent.toLowerCase();
-        //var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
         var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
         // var bIsMidp = sUserAgent.match(/midp/i) == "midp";
         // var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
@@ -19,7 +19,7 @@ var load=new Vue({
         // var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
         // var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
         // document.writeln("您的浏览设备为：");
-          if ( bIsIphoneOs ||  bIsAndroid) {
+          if ( bIsIphoneOs ||  bIsAndroid || bIsIpad) {
             if(bIsIphoneOs){
               console.log("iphone");
               this.showIphone=1;
@@ -35,7 +35,7 @@ var load=new Vue({
             this.showPc=1;
             this.showPhone=0;
           }
-        }
+        },
     },
     mounted:function(){
       this.browserRedirect();
@@ -44,8 +44,8 @@ var load=new Vue({
       function getFont() {
        var screenWidth = oHtml.clientWidth;
        var screenHeight = oHtml.clientHeight;
-       console.log(screenWidth);
-       if(screenWidth<=600){
+       //console.log(screenWidth);
+       if(screenWidth<=1024){
            if (screenHeight / screenWidth < 1.6) {
               screenWidth = screenHeight / 1.6;
               }

@@ -1,0 +1,129 @@
+.phone .section1 {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #4AD38A, #99E699);
+  position: relative;
+}
+.phone .section1 .con {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.phone .section1 a {
+  width: 9.25rem;
+  height: 2rem;
+  bottom: 3rem;
+  background: blue;
+}
+.phone .section1 .pic1 {
+  position: absolute;
+  width: 1.85rem;
+  height: 1.85rem;
+  left: 1.5rem;
+  top: 2rem;
+}
+.phone .section1 .pic2 {
+  width: 100%;
+  top: 3.75rem;
+}
+.phone .section1 .pic3 {
+  width: 100%;
+  top: 11rem;
+}
+.phone .section1 .pic4 {
+  width: 12rem;
+  bottom: 6.4rem;
+}
+.phone .section2 {
+  position: relative;
+}
+.phone .section2 img {
+  width: 100%;
+}
+.phone .section2 .text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 2rem;
+  width: 13.725rem;
+  height: 8.525rem;
+  text-align: center;
+}
+.phone .section2 .text a {
+  display: inline-block;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background: #54DDB6;
+  text-align: center;
+  line-height: 2rem;
+  font-size: 0.75rem;
+  color: #fff;
+}
+.phone .section3 {
+  text-align: center;
+}
+.phone .section3 .img1 {
+  width: 100%;
+}
+.phone .section3 .img2 {
+  width: 91%;
+}
+.phone .section3 .img3 {
+  margin-top: 1rem;
+  width: 56.4%;
+}
+.phone .section3 a {
+  display: block;
+  width: 6rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.75rem;
+  background: #72D4CF;
+  color: #fff;
+  letter-spacing: 1.67px;
+  border-radius: 1rem;
+  margin: 2rem auto;
+}
+.phone .section3 .img4 {
+  width: 74.6%;
+}
+.phone .section3 .img5 {
+  display: block;
+  width: 8.925rem;
+  margin-left: 1.5rem;
+  margin-bottom: 4rem;
+}
+.phone .section4 {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #85EEB2, #C5F38E);
+  position: relative;
+}
+.phone .section4 .con {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.phone .section4 .pic1 {
+  width: 6.45rem;
+  top: 2.25rem;
+}
+.phone .section4 a {
+  top: 6.125rem;
+  width: 6.25rem;
+  height: 1.85rem;
+  background: #54DDB6;
+}
+.phone .section4 .pic2 {
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+.phone .section4 .pic3 {
+  width: 11.125rem;
+  bottom: 3rem;
+}
