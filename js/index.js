@@ -5,10 +5,11 @@ var load=new Vue({
       showPhone:0,
       showIphone:0,
       showAndroid:0,
+      showPic:0,
     },
     methods:{
       //判断设备类型
-      browserRedirect(){
+      browserRedirect:function(){
         var sUserAgent = navigator.userAgent.toLowerCase();
         var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
         var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
@@ -36,8 +37,12 @@ var load=new Vue({
             this.showPhone=0;
           }
         },
+        play:function () {
+            console.log(13);
+        }
     },
     mounted:function(){
+      var _this=this;
       this.browserRedirect();
       var oHtml = document.documentElement;
       getFont();
@@ -53,7 +58,15 @@ var load=new Vue({
               console.log(oHtml.style.fontSize);
             }
        }
+       //监听滚动条事件
+       window.onscroll=function(){
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            console.log(scrollTop);
+            if(scrollTop>=550){
+              _this.showPic=1;
+            }
+        
+       };
+
     }
-
-
 });
