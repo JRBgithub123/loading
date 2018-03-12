@@ -15,34 +15,63 @@
 				<img src="./images/pc/erwei.png" alt="" class="erWei">
 				<div class="section1">
 						<div class="icons">
-								<a href="" class="icon1">
+								<a href="http://kibey-static.qiniudn.com/android_apk_version_2018_02_09_15_35_40_1087.apk" class="icon1">
 									<img src="./images/pc/icon1.png" alt="">
 								</a>
-								<a href="" class="icon2">
+								<a href="https://itunes.apple.com/cn/app/echo%E5%9B%9E%E5%A3%B0-%E6%BD%AE%E6%B5%81%E9%9F%B3%E4%B9%90%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/id1063969207?mt=8" class="icon2">
 									<img src="./images/pc/icon2.png" alt="">
 								</a>
-								<a href="" class="icon3">
+								<a href="https://qn-qn-kibey-static-cdn.app-echo.com/echoinstall_2018_02_28_11_12_21_8087.exe" class="icon3">
 									<img src="./images/pc/icon3.png" alt="">
 								</a>
 						</div>
 				</div>
 				<div class="section2">
-						<img src="./images/pc/pic.png" alt="" class="pic1" v-if="showPic">
+						<img src="./images/pc/pic.png" alt="" class="pic1" v-if="showPic1">
 						<div class="right">
 							<p class="p1">音乐娱乐新体验</p>
 							<p class="p2">推荐精选潮流音乐进入全新音乐世界</p>
-							<a href="" class="btn">立即下载</a>
+							<a href="https://itunes.apple.com/cn/app/echo%E5%9B%9E%E5%A3%B0-%E6%BD%AE%E6%B5%81%E9%9F%B3%E4%B9%90%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/id1063969207?mt=8" class="btn">立即下载</a>
 						</div>
 				</div>
 				<div class="section3">
 							<div class="left">
 								<img src="./images/pc/pic2.png" alt="" class="pic">
-								<img src="./images/pc/play.png" alt="" class="play" @click="play()">
+								<img src="./images/pc/play.png" alt="" class="play" @click="play()" v-if="playStatus">
+								<img src="./images/pc/pause.png" alt="" class="play"  @click="pause()" v-else>
 							</div>
 							<div class="right">
 								<img src="./images/pc/pic3.png" alt="">
 							</div>
-							<img src="./images/pc/pic4.png" alt="" class="danmu">
+							<img src="./images/pc/danmu1.png" alt="" class="danmu1 danmu">
+							<img src="./images/pc/danmu2.png" alt="" class="danmu2 danmu">
+							<img src="./images/pc/danmu3.png" alt="" class="danmu3 danmu">
+							<img src="./images/pc/danmu4.png" alt="" class="danmu4 danmu">
+							<img src="./images/pc/danmu5.png" alt="" class="danmu5 danmu">
+							<audio  ref="audioE" controls>
+										<source src="http://7fvgtj.com2.z0.glb.qiniucdn.com/97828ce515129e379856970692efbcef">
+								</audio>
+				</div>
+				<div class="section4">
+						<div class="left">
+								<p class="p1">收听收藏全网专辑</p>
+								<p class="p2">无论心仪的歌在哪个平台都可搜索链接、收听收藏</p>
+								<a href="https://itunes.apple.com/cn/app/echo%E5%9B%9E%E5%A3%B0-%E6%BD%AE%E6%B5%81%E9%9F%B3%E4%B9%90%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/id1063969207?mt=8" class="btn">立即下载</a>
+						</div>
+						<img src="./images/pc/pic5.png" alt="" class="pic" v-if="showPic2">
+				</div>
+				<div class="section5">
+						<img src="./images/pc/pic6.png" alt="" class="pic" v-if="showPic3">
+						<div class="right">
+							<p class="p1">音乐社交新姿势</p>
+							<p class="p2">加入高质量粉丝社群用音乐结识默契朋友</p>
+						</div>
+						<img src="./images/pc/pic7.png" alt="" class="circle">
+				</div>
+				<div class="section6">
+						<img src="./images/pc/pic8.png" alt="" class="pic1">
+						<img src="./images/pc/pic9.png" alt="" class="pic2">
+						<img src="./images/pc/pic10.png" alt="" class="pic3">
 				</div>
 			</div>
 
@@ -54,7 +83,6 @@
 							<img src="./images/text6.png" alt="" class="con pic4">
 							<a href="" v-if="showIphone" class="con">iPhone版下载</a>
 							<a href="" v-if="showAndroid" class="con">android版下载</a>
-
 					</div>
 					<div class="section2">
 							<img src="./images/bg2.png" alt="">
@@ -83,7 +111,7 @@
 			</div>
 		</div>
 	<script src="./js/vue.2.1.3.js"></script>
-	<script src="./js/jquery.3.1.3.js"></script>
+	<script src="./js/jquery.3.1.1.js"></script>
 	<script src="./js/index.js"></script>
 </body>
 </html>

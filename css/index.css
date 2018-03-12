@@ -133,14 +133,165 @@
 }
 .pc .section3 .danmu {
   position: absolute;
-  width: 1455px;
+}
+.pc .section3 .danmu1 {
+  width: 411px;
+  top: 120px;
+  right: 60vw;
+}
+.pc .section3 .danmu2 {
+  width: 472px;
+  top: 200px;
+  right: 65vw;
+}
+.pc .section3 .danmu3 {
+  width: 285px;
+  top: 360px;
+  right: 30vw;
+}
+.pc .section3 .danmu4 {
+  width: 425px;
+  top: 460px;
+  right: 10vw;
+}
+.pc .section3 .danmu5 {
+  width: 445px;
+  top: 540px;
+  right: 30vw;
+}
+.pc .section3 audio {
+  position: absolute;
+  left: -1000px;
+}
+.pc .section4 {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.pc .section4 .left {
+  width: 410px;
+  height: 336px;
+  position: absolute;
+  right: 54%;
+  top: 0;
+  bottom: 0;
   margin: auto;
-  top: 110px;
+}
+.pc .section4 .left .p1 {
+  font-size: 46px;
+  letter-spacing: 5px;
+  float: right;
+}
+.pc .section4 .left .p2 {
+  font-size: 30px;
+  color: #666;
+  letter-spacing: 6px;
+  float: right;
+  margin: 20px 0 70px 0;
+}
+.pc .section4 .left .btn {
+  float: right;
+  width: 230px;
+  height: 60px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 60px;
+  background: #72D4CF;
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 1.33px;
+}
+.pc .section4 .pic {
+  width: 36vw;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  animation: left 1.5s linear;
+}
+.pc .section5 {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.pc .section5 .pic {
+  width: 29.2vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 50%;
+  animation: right 2s linear;
+}
+.pc .section5 .right {
+  width: 360px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 52%;
+}
+.pc .section5 .right .p1 {
+  font-size: 46px;
+  letter-spacing: 5px;
+}
+.pc .section5 .right .p2 {
+  font-size: 30px;
+  letter-spacing: 6px;
+  color: #666;
+  width: 340px;
+  margin-top: 20px;
+}
+.pc .section5 .circle {
+  position: absolute;
+  width: 105px;
+  right: 295px;
+  bottom: 70px;
+}
+.pc .section6 {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(#85EEB2, #C5F38E);
+  position: relative;
+}
+.pc .section6 img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.pc .section6 img.pic1 {
+  width: 25vw;
+  top: 60px;
+}
+.pc .section6 img.pic2 {
+  width: 47vw;
+  top: 0;
+  bottom: 0;
+}
+.pc .section6 img.pic3 {
+  width: 400px;
+  bottom: 60px;
 }
 /*动画*/
 @keyframes down {
   0% {
     transform: translate(0, -200px);
+  }
+}
+@keyframes left {
+  0% {
+    transform: translate(200px, 0);
+  }
+}
+@keyframes right {
+  0% {
+    transform: translate(-200px, 0);
   }
 }
 /*移动端*/
