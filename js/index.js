@@ -11,7 +11,8 @@ var load=new Vue({
       showPic3:0,
       beforeScroll:0,
       afterScroll:0,
-      direction:0   //滚动方向默认为0 向下
+      direction:0 ,  //滚动方向默认为0 向下
+
     },
     methods:{
       //判断设备类型
@@ -37,20 +38,34 @@ var load=new Vue({
             this.showPhone=0;
           }
         },
-        play:function () {
-          var _this=this;
-          this.playStatus=0;
-            this.$nextTick(function(){
-                console.log(_this.$refs.audioE);
-                _this.$refs.audioE.play();
-            });
-        },
-        pause:function () {
-          var _this=this;
-            this.playStatus=1;
-            this.$nextTick(function(){
-                _this.$refs.audioE.pause();
+        // play:function () {
+        //   var _this=this;
+        //   this.playStatus=0;
+        //     this.$nextTick(function(){
+        //         console.log(_this.$refs.audioE);
+        //         _this.$refs.audioE.play();
+        //     });
+        // },
+        // pause:function () {
+        //   var _this=this;
+        //     this.playStatus=1;
+        //     this.$nextTick(function(){
+        //         _this.$refs.audioE.pause();
+        //       });
+        // },
+        handleMusic:function () {
+            var _this=this;
+            this.playStatus=!this.playStatus;
+            if(this.playStatus){
+              this.$nextTick(function(){
+                  _this.$refs.audioE.pause();
+                });
+            }else{
+              this.$nextTick(function(){
+                  console.log(_this.$refs.audioE);
+                  _this.$refs.audioE.play();
               });
+            }
         }
     },
     mounted:function(){

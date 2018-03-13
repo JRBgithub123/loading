@@ -37,8 +37,8 @@
 				<div class="section3">
 							<div class="left">
 								<img src="./images/pc/pic2.png" alt="" class="pic">
-								<img src="./images/pc/play.png" alt="" class="play" @click="play()" v-if="playStatus">
-								<img src="./images/pc/pause.png" alt="" class="play"  @click="pause()" v-else>
+								<img src="./images/pc/play.png" alt="" class="play" @click="handleMusic()" v-if="playStatus">
+								<img src="./images/pc/pause.png" alt="" class="play"  @click="handleMusic()" v-else>
 							</div>
 							<div class="right">
 								<img src="./images/pc/pic3.png" alt="">
@@ -48,7 +48,7 @@
 							<img src="./images/pc/danmu3.png" alt="" class="danmu3 danmu">
 							<img src="./images/pc/danmu4.png" alt="" class="danmu4 danmu">
 							<img src="./images/pc/danmu5.png" alt="" class="danmu5 danmu">
-							<audio  ref="audioE" controls>
+							<audio  ref="audioE" >
 										<source src="http://7fvgtj.com2.z0.glb.qiniucdn.com/97828ce515129e379856970692efbcef">
 								</audio>
 				</div>
@@ -81,28 +81,51 @@
 							<img src="./images/echo.png" alt="" class="con pic2">
 							<img src="./images/img5.png" alt="" class="con pic3">
 							<img src="./images/text6.png" alt="" class="con pic4">
-							<a href="" v-if="showIphone" class="con">iPhone版下载</a>
-							<a href="" v-if="showAndroid" class="con">android版下载</a>
+							<a href="https://itunes.apple.com/cn/app/echo%E5%9B%9E%E5%A3%B0-%E6%BD%AE%E6%B5%81%E9%9F%B3%E4%B9%90%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/id1063969207?mt=8" v-if="showIphone" class="con">
+								<img src="./images/iphone1.png" alt="">
+							</a>
+							<a href="http://kibey-static.qiniudn.com/android_apk_version_2018_02_09_15_35_40_1087.apk" v-if="showAndroid" class="con">
+								<img src="./images/android1.png" alt="">
+							</a>
 					</div>
 					<div class="section2">
 							<img src="./images/bg2.png" alt="">
 							<div class="text">
 								<img src="./images/text1.png" alt="">
-								<a href="">立即下载</a>
+								<a href="https://itunes.apple.com/cn/app/echo%E5%9B%9E%E5%A3%B0-%E6%BD%AE%E6%B5%81%E9%9F%B3%E4%B9%90%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/id1063969207?mt=8" v-if="showIphone">立即下载</a>
+								<a href="http://kibey-static.qiniudn.com/android_apk_version_2018_02_09_15_35_40_1087.apk" v-if="showAndroid">立即下载</a>
 							</div>
 					</div>
 					<div class="section3">
 						<img src="./images/img1.png" alt="" class="img1">
+						<div class="container">
+								<img src="./images/img6.png" alt="" class="pic">
+								<img src="./images/play.png" alt=""  v-if="playStatus" class="musicBtn" @click="handleMusic()">
+								<img src="./images/pause.png" alt="" v-else class="musicBtn" @click="handleMusic()">
+
+								<audio  ref="audioE" controls>
+											<source src="http://7fvgtj.com2.z0.glb.qiniucdn.com/97828ce515129e379856970692efbcef">
+								</audio>
+						</div>
+						<img src="./images/img7.png" alt="" class="pic1">
+						<img src="./images/img8.png" alt="" class="pic2">
+					</div>
+					<div class="section4">
 						<img src="./images/img2.png" alt="" class="img2">
 					  <img src="./images/text2.png" alt="" class="img3">
-						<a href="">立即下载</a>
+						<a href="https://itunes.apple.com/cn/app/echo%E5%9B%9E%E5%A3%B0-%E6%BD%AE%E6%B5%81%E9%9F%B3%E4%B9%90%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/id1063969207?mt=8" v-if="showIphone">立即下载</a>
+						<a href="http://kibey-static.qiniudn.com/android_apk_version_2018_02_09_15_35_40_1087.apk" v-if="showAndroid">立即下载</a>
 						<img src="./images/img3.png" alt="" class="img4">
 						<img src="./images/text3.png" alt="" class="img5">
 					</div>
-					<div class="section4">
+					<div class="section5">
 							<img src="./images/text4.png" alt="" class="con pic1">
-							<a href="" v-if="showIphone" class="con">iPhone版下载</a>
-							<a href="" v-if="showAndroid" class="con">android版下载</a>
+							<a href="https://itunes.apple.com/cn/app/echo%E5%9B%9E%E5%A3%B0-%E6%BD%AE%E6%B5%81%E9%9F%B3%E4%B9%90%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/id1063969207?mt=8" v-if="showIphone" class="con">
+								<img src="./images/iphone1.png" alt="">
+							</a>
+							<a href="http://kibey-static.qiniudn.com/android_apk_version_2018_02_09_15_35_40_1087.apk" v-if="showAndroid" class="con">
+								<img src="./images/android1.png" alt="">
+							</a>
 							<img src="./images/img4.png" alt="" class="con pic2">
 							<img src="./images/text5.png" alt="" class="con pic3">
 
