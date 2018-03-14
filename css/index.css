@@ -1,6 +1,6 @@
 /*pc端*/
 .pc {
-  overflow: hidden;
+  overflow: scroll;
 }
 .pc .erWei {
   position: fixed;
@@ -62,7 +62,7 @@
 }
 .pc .section2 .pic1 {
   position: absolute;
-  width: 560px;
+  width: 29.2%;
   right: 50%;
   top: 150px;
   animation: down 2s linear;

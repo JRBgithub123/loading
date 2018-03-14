@@ -38,21 +38,6 @@ var load=new Vue({
             this.showPhone=0;
           }
         },
-        // play:function () {
-        //   var _this=this;
-        //   this.playStatus=0;
-        //     this.$nextTick(function(){
-        //         console.log(_this.$refs.audioE);
-        //         _this.$refs.audioE.play();
-        //     });
-        // },
-        // pause:function () {
-        //   var _this=this;
-        //     this.playStatus=1;
-        //     this.$nextTick(function(){
-        //         _this.$refs.audioE.pause();
-        //       });
-        // },
         handleMusic:function () {
             var _this=this;
             this.playStatus=!this.playStatus;
@@ -92,30 +77,27 @@ var load=new Vue({
        //监听滚动条事件
        window.onscroll=function(){
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            console.log(scrollTop);
             //判断滚动方向
-            _this.afterScroll=scrollTop;
-            if(_this.beforeScroll>=_this.afterScroll){
-                console.log("向上");
-                _this.direction=1;
-                _this.beforeScroll=_this.afterScroll;
-                var right=0;
-                for(var i=0;i<length;i++){
-                   right=parseInt($(".section3 .danmu").eq(i).css("right"));
-                   danmus[i]=right;
+            window.addEventListener("mousewheel",myFunction);
+            window.addEventListener("DOMMouseScroll", myFunction);
+            function myFunction(e){
+                var  change=e.deltaY||e.wheelDelta;
+                if(change<=0){
+                    _this.direction=1;
+                    for(var i=0;i<length;i++){
+                       right=parseInt($(".section3 .danmu").eq(i).css("right"));
+                       danmus[i]=right;
+                    }
+                }else{
+                  _this.direction=0;
+                  var right1=0;
+                  for(var j=0;j<length;j++){
+                     right1=parseInt($(".section3 .danmu").eq(j).css("right"));
+                     danmus[j]=right1;
+                  }
                 }
-                console.log(danmus);
-            }else if(_this.beforeScroll<_this.afterScroll){
-                console.log("向下");
-                _this.direction=0;
-                _this.beforeScroll=_this.afterScroll;
-                var right1=0;
-                for(var j=0;j<length;j++){
-                   right1=parseInt($(".section3 .danmu").eq(j).css("right"));
-                   danmus[j]=right1;
-                }
-                console.log(danmus);
             }
+
             //控制弹幕滑动
             if(scrollTop>=800&&_this.direction==0){//向左滚动
                 for(var m=0;m<length;m++){
@@ -130,8 +112,9 @@ var load=new Vue({
                 });
               }
             }
-
+            //控制图片显示与隐藏
             if(scrollTop>=550){
+              //console.log(123);
               _this.showPic1=1;
             }
             if(scrollTop>=1900){
