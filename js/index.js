@@ -56,9 +56,7 @@ var load=new Vue({
     mounted:function(){
       var _this=this;
       this.browserRedirect();
-      var oHtml = document.documentElement;
-      getFont();
-      function getFont() {
+        var oHtml = document.documentElement;
        var screenWidth = oHtml.clientWidth;
        var screenHeight = oHtml.clientHeight;
        //console.log(screenWidth);
@@ -69,62 +67,65 @@ var load=new Vue({
               oHtml.style.fontSize = screenWidth / (750 / 40) + 'px';
               console.log(oHtml.style.fontSize);
             }
-       }
-       var danMuObj=$(".section3 .danmu");
-       var length=danMuObj.length;
-       var danmus=[];
-       //console.log(danmus);
-       //监听滚动条事件
-       window.onscroll=function(){
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            //判断滚动方向
-            window.addEventListener("mousewheel",myFunction);
-            window.addEventListener("DOMMouseScroll", myFunction);
-            function myFunction(e){
-                var  change=e.deltaY||e.wheelDelta;
-                if(change<=0){
-                    _this.direction=1;
-                    for(var i=0;i<length;i++){
-                       right=parseInt($(".section3 .danmu").eq(i).css("right"));
-                       danmus[i]=right;
-                    }
-                }else{
-                  _this.direction=0;
-                  var right1=0;
-                  for(var j=0;j<length;j++){
-                     right1=parseInt($(".section3 .danmu").eq(j).css("right"));
-                     danmus[j]=right1;
-                  }
-                }
-            }
 
-            //控制弹幕滑动
-            if(scrollTop>=800&&_this.direction==0){//向左滚动
-                for(var m=0;m<length;m++){
-                  danMuObj.eq(m).css({
-                      "right":danmus[m]+1
-                  });
-                }
-            }else if(scrollTop<=2400&&_this.direction==1){//向右滚动
-              for(var k=0;k<length;k++){
-                danMuObj.eq(k).css({
-                    "right":danmus[k]-1
-                });
-              }
-            }
-            //控制图片显示与隐藏
-            if(scrollTop>=550){
-              //console.log(123);
-              _this.showPic1=1;
-            }
-            if(scrollTop>=1900){
-                _this.showPic2=1;
-            }
-            if(scrollTop>=2540){
-                _this.showPic3=1;
-            }
-
-       };
 
     }
 });
+
+
+var danMuObj=$(".section3 .danmu");
+var length=danMuObj.length;
+var danmus=[];
+//console.log(danmus);
+//监听滚动条事件
+window.onscroll=function(){
+     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+     //判断滚动方向
+    var isFirefox=navigator.userAgent.indexOf("Firefox");
+    var mouseEvent=isFirefox>0?"DOMMouseScroll":"mousewheel";
+     window.addEventListener(mouseEvent,myFunction);
+     // window.addEventListener("DOMMouseScroll", myFunction);
+     function myFunction(e){
+         var  change=e.deltaY||e.wheelDelta;
+         console.log(change);
+         if(change<=0){ //页面向下划
+             load.direction=1;
+             for(var i=0;i<length;i++){
+                danmus[i]=parseInt($(".section3 .danmu").eq(i).css("right"));
+             }
+         }else{  //页面向上划
+           load.direction=0;
+           var right1=0;
+           for(var j=0;j<length;j++){
+              danmus[j]=parseInt($(".section3 .danmu").eq(j).css("right"));
+           }
+         }
+     }
+
+     //控制弹幕滑动
+     if(scrollTop>=900&&load.direction==0){//向左滚动
+         for(var m=0;m<length;m++){
+           danMuObj.eq(m).css({
+               "right":danmus[m]+m*2+1
+           });
+         }
+     }else if(scrollTop<=2400&&load.direction==1){//向右滚动
+       for(var k=0;k<length;k++){
+         danMuObj.eq(k).css({
+             "right":danmus[k]-k*2-1
+         });
+       }
+     }
+     //控制图片显示与隐藏
+     if(scrollTop>=550){
+       //console.log(123);
+       load.showPic1=1;
+     }
+     if(scrollTop>=1900){
+         load.showPic2=1;
+     }
+     if(scrollTop>=2540){
+         load.showPic3=1;
+     }
+
+};
