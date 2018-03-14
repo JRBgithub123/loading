@@ -80,10 +80,10 @@ var danmus=[];
 //监听滚动条事件
 window.onscroll=function(){
      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-     //判断滚动方向
+
+       var support = "onwheel" in document.createElement("div") ? "wheel" : document.onmousewheel !== undefined ? "mousewheel" : "DOMMouseScroll";
     var isFirefox=navigator.userAgent.indexOf("Firefox");
-    var mouseEvent=isFirefox>0?"DOMMouseScroll":"mousewheel";
-     window.addEventListener(mouseEvent,myFunction);
+     window.addEventListener(support,myFunction);
      // window.addEventListener("DOMMouseScroll", myFunction);
      function myFunction(e){
          var  change=e.deltaY||e.wheelDelta;
